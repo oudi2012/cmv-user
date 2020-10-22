@@ -1,0 +1,12 @@
+spring:
+  profiles:
+    active: dev
+  application:
+    name: mycmv-server-config
+
+mybatis:
+  #mysql 环境
+  mapperLocations: classpath:mysql/com/mycmv/user/*.xml
+
+logging:
+  config: classpath:log4j2.xml

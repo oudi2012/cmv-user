@@ -1,6 +1,8 @@
 package com.mycmv.user.controller.rest;
 
 import com.google.common.base.Preconditions;
+import com.mycmv.user.configuration.CurrentUser;
+import com.mycmv.user.configuration.UserLoginToken;
 import com.mycmv.user.constants.LogConstants;
 import com.mycmv.user.exception.BusinessException;
 import com.mycmv.user.model.AbstractUser;
@@ -28,9 +30,9 @@ public class AdminInfoController {
     @Resource
     private AdminInfoService adminInfoService;
 
-
+    @UserLoginToken
     @GetMapping("userInfo")
-    public ResponseObject userInfo(AbstractUser user) {
+    public ResponseObject userInfo(@CurrentUser AbstractUser user) {
         logger.info("admin/userInfo");
         ResponseObject resObj = new ResponseObject();
         AdminInfo tmpItem = adminInfoService.findById(user.getId());

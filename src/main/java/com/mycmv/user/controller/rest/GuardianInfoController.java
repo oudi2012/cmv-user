@@ -167,7 +167,8 @@ public class GuardianInfoController {
     public ResponseObject bind(@RequestBody GuardianStudentVo guardianStudentVo) {
         logger.info("调用接口 guardian => bind");
         ResponseObject resObj = new ResponseObject();
-        CommonUtils.executeSuccess(resObj, guardianInfoService.bindGuardianInfo(guardianStudentVo));
+        guardianInfoService.bindGuardianInfo(guardianStudentVo);
+        CommonUtils.executeSuccess(resObj);
         return resObj;
     }
 

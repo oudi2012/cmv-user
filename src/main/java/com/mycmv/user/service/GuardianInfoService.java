@@ -15,6 +15,6 @@ public interface GuardianInfoService extends UserInfoService<GuardianInfo>{
      * @param guardianStudentVo guardianStudentVo
      * @return
      */
-    int bindGuardianInfo(GuardianStudentVo guardianStudentVo);
+    void bindGuardianInfo(GuardianStudentVo guardianStudentVo);
 
 }
